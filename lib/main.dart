@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:headway/constants/theme_colors.dart';
+import 'package:headway/screens/home_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -42,7 +44,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: kBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         child: Column(
@@ -63,14 +65,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: widget.pageNumber == i
-                              ? Colors.blue
-                              : Colors.grey[850],
+                              ? kPrimaryColor
+                              : kInactiveDotColor,
                         ),
                         child: Center(
                           child: Text(
-                            "$i",
+                            "${i + 1}",
                             style: const TextStyle(
-                                fontSize: 10.0, color: Colors.white),
+                                fontSize: 10.0, color: kWhiteColor),
                           ),
                         )),
                   ),
@@ -80,13 +82,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 key: ValueKey<String>(bigText[widget.pageNumber]),
                 style: const TextStyle(
                     fontSize: 50.0,
-                    color: Colors.white,
+                    color: kWhiteColor,
                     fontWeight: FontWeight.bold)),
             Text(paraText[widget.pageNumber],
                 key: ValueKey<String>(paraText[widget.pageNumber]),
                 style: const TextStyle(
                   fontSize: 20.0,
-                  color: Colors.white,
+                  color: kWhiteColor,
                 )),
             const Spacer(),
             Column(
@@ -96,12 +98,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   child: ElevatedButton(
                       style: ButtonStyle(
                           backgroundColor:
-                              const WidgetStatePropertyAll(Colors.blue),
+                              const WidgetStatePropertyAll(kPrimaryColor),
                           shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0)))),
                       onPressed: () {
                         setState(() {
-                          widget.pageNumber = (widget.pageNumber + 1) % 4;
+                          if (widget.pageNumber == 3) {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()),
+                            );
+                          }
+                          widget.pageNumber = (widget.pageNumber + 1);
                         });
                       },
                       child: Padding(
@@ -110,7 +118,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             child: Text('Continue',
                                 style: TextStyle(
                                     fontSize: 20.0,
-                                    color: Colors.white,
+                                    color: kWhiteColor,
                                     fontWeight: FontWeight.bold))),
                       )),
                 ),
@@ -121,14 +129,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     Text('Already have an account?',
                         style: TextStyle(
                           fontSize: 20.0,
-                          color: Colors.white,
+                          color: kWhiteColor,
                         )),
                     TextButton(
                       onPressed: () {},
                       child: const Text('Log in',
                           style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.blue,
+                            color: kPrimaryColor,
                           )),
                     )
                   ],
