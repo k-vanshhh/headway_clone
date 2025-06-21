@@ -76,32 +76,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
               ],
             ),
-            AnimatedSwitcher(
-              duration: const Duration(seconds: 1),
-              transitionBuilder: (child, animation) => FadeTransition(
-                opacity: animation,
-                child: child,
-              ),
-              child: Text(bigText[widget.pageNumber],
-                  key: ValueKey<String>(bigText[widget.pageNumber]),
-                  style: const TextStyle(
-                      fontSize: 50.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold)),
-            ),
-            AnimatedSwitcher(
-              duration: const Duration(seconds: 1),
-              transitionBuilder: (child, animation) => FadeTransition(
-                opacity: animation,
-                child: child,
-              ),
-              child: Text(paraText[widget.pageNumber],
-                  key: ValueKey<String>(paraText[widget.pageNumber]),
-                  style: const TextStyle(
-                    fontSize: 20.0,
+            Text(bigText[widget.pageNumber],
+                key: ValueKey<String>(bigText[widget.pageNumber]),
+                style: const TextStyle(
+                    fontSize: 50.0,
                     color: Colors.white,
-                  )),
-            ),
+                    fontWeight: FontWeight.bold)),
+            Text(paraText[widget.pageNumber],
+                key: ValueKey<String>(paraText[widget.pageNumber]),
+                style: const TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                )),
             const Spacer(),
             Column(
               children: [
