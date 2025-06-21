@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:headway/constants/theme_colors.dart';
+import 'package:headway/screens/audio_book_page.dart';
 import 'dart:math' as math;
 
 class HomeScreen extends StatelessWidget {
@@ -36,18 +37,30 @@ class HomeScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 30.0),
                 child: Container(
-                  color: Colors.blue,
+                  height: 250.0,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             'Free daily \nsummary',
                             style: kTextTheme.displayLarge,
                           ),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AudioBookPage(),
+                                  ),
+                                );
+                              },
                               child: Row(
                                 children: [
                                   Text(
@@ -67,6 +80,7 @@ class HomeScreen extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
                           child: Image(
+                            height: 200.0,
                             image: const AssetImage(
                                 'assets/images/placeholder.jpg'),
                           ),
@@ -75,8 +89,14 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 )),
-            Text('You might also like'),
-            Text('Summaries based on your ratings'),
+            Text(
+              'You might also like',
+              style: kTextTheme.displayMedium,
+            ),
+            Text(
+              'Summaries based on your ratings',
+              style: kTextTheme.displaySmall,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 30.0),
               child: ListTile(
@@ -116,29 +136,37 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: kBackgroundColor,
-        fixedColor: kBackgroundColor,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'For you',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Library',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Activity',
-          ),
-        ],
-        currentIndex: 0,
-        onTap: (index) {},
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          // sets the background color of the `BottomNavigationBar`
+          canvasColor: kBackgroundColor,
+          // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+          primaryColor: Colors.red,
+          textTheme: Theme.of(context).textTheme,
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: kBackgroundColor,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore),
+              label: 'For you',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Explore',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark_outline_rounded),
+              label: 'Library',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Activity',
+            ),
+          ],
+          currentIndex: 0,
+          onTap: (index) {},
+        ),
       ),
     );
   }
