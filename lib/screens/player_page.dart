@@ -74,7 +74,7 @@ class _PlayerPageState extends State<PlayerPage> {
                     borderRadius: BorderRadius.circular(20.0),
                     child: Image.asset(
                       'assets/images/placeholder.jpg',
-                      height: size.height * 0.5,
+                      height: size.height * 0.4,
                       fit: BoxFit.cover,
                     ),
                   ),

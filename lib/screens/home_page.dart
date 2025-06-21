@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Text(
                             'Free daily \nsummary',
-                            style: kTextTheme.displayLarge,
+                            style: kTextTheme.displayMedium,
                           ),
                           TextButton(
                               onPressed: () {
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
                           child: Image(
-                            height: 200.0,
+                            height: 150.0,
                             image: const AssetImage(
                                 'assets/images/placeholder.jpg'),
                           ),
@@ -97,42 +97,42 @@ class HomeScreen extends StatelessWidget {
               'Summaries based on your ratings',
               style: kTextTheme.displaySmall,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
-              child: ListTile(
-                tileColor: Colors.amber[800],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                leading: Icon(
-                  Icons.double_arrow_sharp,
-                  color: Colors.amber,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
-              child: ListTile(
-                tileColor: Colors.amber[800],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                leading: Icon(
-                  Icons.double_arrow_sharp,
-                  color: Colors.amber,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 30.0),
-              child: ListTile(
-                tileColor: Colors.amber[800],
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                leading: Icon(
-                  Icons.double_arrow_sharp,
-                  color: Colors.amber,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(vertical: 30.0),
+            //   child: ListTile(
+            //     tileColor: Colors.amber[800],
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(10.0)),
+            //     leading: Icon(
+            //       Icons.double_arrow_sharp,
+            //       color: Colors.amber,
+            //     ),
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(vertical: 30.0),
+            //   child: ListTile(
+            //     tileColor: Colors.amber[800],
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(10.0)),
+            //     leading: Icon(
+            //       Icons.double_arrow_sharp,
+            //       color: Colors.amber,
+            //     ),
+            //   ),
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(vertical: 30.0),
+            //   child: ListTile(
+            //     tileColor: Colors.amber[800],
+            //     shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(10.0)),
+            //     leading: Icon(
+            //       Icons.double_arrow_sharp,
+            //       color: Colors.amber,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

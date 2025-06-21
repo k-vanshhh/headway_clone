@@ -111,7 +111,7 @@ class AudioBookPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(5.0),
                         child: Image.asset(
                           'assets/images/placeholder.jpg',
-                          height: size.height * 0.5,
+                          height: size.height * 0.4,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -123,7 +123,7 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.share),
+                                icon: Icon(Icons.share, color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement share functionality
                                 },
@@ -133,7 +133,7 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.download),
+                                icon: Icon(Icons.download, color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement download functionality
                                 },
@@ -143,7 +143,8 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.bookmark_border),
+                                icon: Icon(Icons.bookmark_border,
+                                    color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement save functionality
                                 },
@@ -155,9 +156,9 @@ class AudioBookPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Text('Summary', style: kTextTheme.displayMedium),
-                Text('Atomic Habits', style: kTextTheme.displayMedium),
-                Text('James Clear', style: kTextTheme.displayMedium),
+                Text('Summary', style: kTextTheme.displaySmall),
+                Text('Atomic Habits', style: kTextTheme.displaySmall),
+                Text('James Clear', style: kTextTheme.displaySmall),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -166,9 +167,10 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.access_time, color: kWhiteColor, size: 25),
+                          Icon(Icons.access_time,
+                              color: Colors.white, size: 25),
                           SizedBox(width: 4),
-                          Text('15 min', style: kTextTheme.displayMedium),
+                          Text('15 min', style: kTextTheme.displaySmall),
                         ],
                       ),
                     ),
@@ -177,9 +179,9 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.headset, color: kWhiteColor, size: 25),
+                          Icon(Icons.headset, color: Colors.white, size: 25),
                           SizedBox(width: 4),
-                          Text('Audio', style: kTextTheme.displayMedium),
+                          Text('Audio', style: kTextTheme.displaySmall),
                         ],
                       ),
                     ),
@@ -188,9 +190,10 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.star_border, color: kWhiteColor, size: 25),
+                          Icon(Icons.star_border,
+                              color: Colors.white, size: 25),
                           SizedBox(width: 4),
-                          Text('4.8', style: kTextTheme.displayMedium),
+                          Text('4.8', style: kTextTheme.displaySmall),
                         ],
                       ),
                     ),

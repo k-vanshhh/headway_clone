@@ -53,8 +53,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 500,
-              width: 500,
+              height: 400,
+              width: 400,
             ),
             Row(
               children: [
@@ -82,13 +82,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Text(bigText[widget.pageNumber],
                 key: ValueKey<String>(bigText[widget.pageNumber]),
                 style: const TextStyle(
-                    fontSize: 50.0,
+                    fontSize: 30.0,
                     color: kWhiteColor,
                     fontWeight: FontWeight.bold)),
             Text(paraText[widget.pageNumber],
                 key: ValueKey<String>(paraText[widget.pageNumber]),
                 style: const TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 15.0,
                   color: kWhiteColor,
                 )),
             const Spacer(),
@@ -129,14 +129,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   children: [
                     Text('Already have an account?',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 15.0,
                           color: kWhiteColor,
                         )),
                     TextButton(
                       onPressed: () {},
                       child: const Text('Log in',
                           style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 15.0,
                             color: kPrimaryColor,
                           )),
                     )
