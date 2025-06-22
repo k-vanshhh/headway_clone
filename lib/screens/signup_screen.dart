@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:headway/app/mobile/auth_services.dart';
 import 'package:headway/constants/theme_colors.dart';
 import 'package:headway/screens/home_page.dart';
-import 'login_screen.dart';
+import 'package:headway/screens/login_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -32,7 +32,7 @@ class _SignupScreenState extends State<SignupScreen> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => const HomeScreen()),
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
       );
     } catch (e) {
       if (!mounted) return;
