@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:headway/constants/theme_colors.dart';
 
 class PlayerPage extends StatefulWidget {
-  PlayerPage({super.key});
+  const PlayerPage({super.key});
 
   @override
   State<PlayerPage> createState() => _PlayerPageState();
@@ -170,14 +170,14 @@ class CustomUtilityOptions extends StatelessWidget {
             onPressed: () {},
             //onSkipToPrevious,
             iconSize: 40.0,
-            icon: Icon(Icons.skip_previous_rounded, color: kWhiteColor),
+            icon: const Icon(Icons.skip_previous_rounded, color: kWhiteColor),
             // color: kWhiteColor,
           ),
           IconButton(
             key: const Key('backward_5'),
             onPressed: () {},
             iconSize: 45.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.replay_5_rounded,
               color: kWhiteColor,
             ),
@@ -187,12 +187,13 @@ class CustomUtilityOptions extends StatelessWidget {
             transitionBuilder: (child, animation) =>
                 ScaleTransition(scale: animation, child: child),
             child: IconButton(
-              key: ValueKey<bool>(false), // Replace with isPlaying if available
+              key: const ValueKey<bool>(
+                  false), // Replace with isPlaying if available
               onPressed: () {
                 // Toggle play/pause state here
               },
               iconSize: 50.0,
-              icon: Icon(
+              icon: const Icon(
                 false
                     ? Icons.pause
                     : Icons.play_arrow_rounded, // Replace with isPlaying
@@ -204,7 +205,7 @@ class CustomUtilityOptions extends StatelessWidget {
             key: const Key('forward_10'),
             onPressed: () {},
             iconSize: 45.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.forward_10_rounded,
               color: kWhiteColor,
             ),
@@ -215,7 +216,7 @@ class CustomUtilityOptions extends StatelessWidget {
             onPressed: () {},
             //  onSkipToNext,
             iconSize: 40.0,
-            icon: Icon(Icons.skip_next_rounded, color: kWhiteColor),
+            icon: const Icon(Icons.skip_next_rounded, color: kWhiteColor),
             // color: color,
           ),
         ],

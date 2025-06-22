@@ -56,7 +56,7 @@ class AudioBookPage extends StatelessWidget {
                           onPressed: () {
                             // TODO: Implement Read functionality
                           },
-                          icon: Icon(Icons.add),
+                          icon: const Icon(Icons.add),
                           label: const Text(
                             'Read',
                           ),
@@ -81,7 +81,7 @@ class AudioBookPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                    builder: (context) => PlayerPage()),
+                                    builder: (context) => const PlayerPage()),
                               );
                             },
                             icon: const Icon(Icons.headphones),
@@ -123,7 +123,8 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.share, color: Colors.white),
+                                icon: const Icon(Icons.share,
+                                    color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement share functionality
                                 },
@@ -133,7 +134,8 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.download, color: Colors.white),
+                                icon: const Icon(Icons.download,
+                                    color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement download functionality
                                 },
@@ -143,7 +145,7 @@ class AudioBookPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(vertical: 4.0),
                               child: IconButton(
-                                icon: Icon(Icons.bookmark_border,
+                                icon: const Icon(Icons.bookmark_border,
                                     color: Colors.white),
                                 onPressed: () {
                                   // TODO: Implement save functionality
@@ -167,9 +169,9 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.access_time,
+                          const Icon(Icons.access_time,
                               color: Colors.white, size: 25),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text('15 min', style: kTextTheme.displaySmall),
                         ],
                       ),
@@ -179,8 +181,9 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.headset, color: Colors.white, size: 25),
-                          SizedBox(width: 4),
+                          const Icon(Icons.headset,
+                              color: Colors.white, size: 25),
+                          const SizedBox(width: 4),
                           Text('Audio', style: kTextTheme.displaySmall),
                         ],
                       ),
@@ -190,9 +193,9 @@ class AudioBookPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.star_border,
+                          const Icon(Icons.star_border,
                               color: Colors.white, size: 25),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text('4.8', style: kTextTheme.displaySmall),
                         ],
                       ),

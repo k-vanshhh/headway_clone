@@ -1,3 +1,18 @@
+buildscript {
+    ext.kotlin_version = '1.8.22' // ✅ specify your Kotlin version
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:8.0.2" // ✅ ensure recent Gradle plugin
+        // Add other classpaths if needed
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -5,13 +20,22 @@ allprojects {
     }
 }
 
-rootProject.buildDir = "../build"
+// ✅ Force all Kotlin dependencies to use the same version
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
+
     project.evaluationDependsOn(":app")
+
+    configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            if (details.requested.group == 'org.jetbrains.kotlin') {
+                details.useVersion kotlin_version
+            }
+        }
+    }
 }
+
+rootProject.buildDir = "../build"
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir

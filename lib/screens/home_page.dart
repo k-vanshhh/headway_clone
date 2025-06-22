@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 tileColor: Colors.amber[800],
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
-                leading: Icon(
+                leading: const Icon(
                   Icons.double_arrow_sharp,
                   color: Colors.amber,
                 ),
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => AudioBookPage(),
+                                    builder: (context) => const AudioBookPage(),
                                   ),
                                 );
                               },
@@ -79,10 +79,9 @@ class HomeScreen extends StatelessWidget {
                         angle: math.pi / 12.0,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(12.0),
-                          child: Image(
+                          child: const Image(
                             height: 150.0,
-                            image: const AssetImage(
-                                'assets/images/placeholder.jpg'),
+                            image: AssetImage('assets/images/placeholder.jpg'),
                           ),
                         ),
                       ),
